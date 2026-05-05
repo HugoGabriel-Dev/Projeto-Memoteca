@@ -5,7 +5,7 @@ const ui = {
         const listaPensamentos = document.querySelector("#lista-pensamentos");
         try {
             const pensamentos = await api.buscarPensamento();
-            listaPensamentos.innerHTML = ""; // Limpa a lista antes de renderizar
+            listaPensamentos.innerHTML = ""; // Limpa antes de carregar
             pensamentos.forEach(ui.adicionarPensamentos);
         } catch {
             alert("Erro ao renderizar pensamentos...");
@@ -20,12 +20,10 @@ const ui = {
 
         const iconeAspas = document.createElement('img');
         iconeAspas.src = "assets/imagens/aspas-azuis.png";
-        iconeAspas.alt = "aspas azuis";
         iconeAspas.classList.add('icone-aspas');
 
         const pensamentoConteudo = document.createElement('div');
         pensamentoConteudo.classList.add('pensamento-conteudo');
-        // AQUI ESTAVA O ERRO: deve ser .conteudo
         pensamentoConteudo.textContent = pensamento.conteudo;
 
         const pensamentoAutoria = document.createElement('div');
@@ -38,5 +36,4 @@ const ui = {
         listaPensamentos.appendChild(li);
     }
 };
-
 export default ui;
