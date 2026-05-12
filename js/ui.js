@@ -34,6 +34,10 @@ const ui = {
         li.appendChild(pensamentoConteudo);
         li.appendChild(pensamentoAutoria);
         listaPensamentos.appendChild(li);
+    },
+
+    cancelarPensamento(){
+        
     }
 };
 export default ui;
